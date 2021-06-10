@@ -58,27 +58,48 @@ public class Game {
         score++;
     }
 
+    /**
+     * décrémentation du score max en fonction d'un entienr
+     */
     public void decMaxScore(int num) {
         this.maxScore -= num;
     }
 
+    /**
+     * récupère la largeur de la fenêtre
+     * @return la largeur de la fenêtre
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * récupère la hauteur de la fenêtre
+     * @return la hauteur de la fenêtre
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * remet le score à 0 pour recommencer la partie
+     */
     public void resetScore() {
         score = 0;
         scorePoints = 0;
     }
 
+    /**
+     * récupère la couleur de l'objet choisi
+     * @return la couleur d'un objet
+     */
     public Color getColor() {
         return color;
     }
 
+    /**
+     * @return
+     */
     public double getMultiplier() {
         return multiplier;
     }

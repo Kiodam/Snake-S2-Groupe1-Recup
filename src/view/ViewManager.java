@@ -13,7 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import src.Main;
-import src.model.AdvancedSnakeSubScene;
+import src.model.SnakeSubScene;
 import src.model.HighScore;
 import src.model.Snake;
 
@@ -33,7 +33,7 @@ public class ViewManager {
 
 
     //mainSubScene
-    private AdvancedSnakeSubScene mainSubScene;
+    private SnakeSubScene mainSubScene;
     private String css = "src/ressource/style/styling.css";
     private Image redApple = new Image("src/ressource/image/apple.png");
     private Image berry = new Image("src/ressource/image/berry.png");
@@ -43,11 +43,11 @@ public class ViewManager {
     private Image multiplicator = new Image("src/ressource/image/multiplicators.png");
 
     //ScoreSubScene
-    private AdvancedSnakeSubScene scoreSubScene;
+    private SnakeSubScene scoreSubScene;
     private static Label highScoreLabel;
 
     //SettingSubScene
-    private AdvancedSnakeSubScene settingSubScene;
+    private SnakeSubScene settingSubScene;
     private CheckBox powerApples;
     private CheckBox checkEasy;
     private CheckBox checkMedium;
@@ -56,7 +56,7 @@ public class ViewManager {
     private TextField inputGridSizeY;
     
     //SkinSubScene
-    private AdvancedSnakeSubScene skinSubScene;
+    private SnakeSubScene skinSubScene;
 
     private CheckBox checkSkin1;
     private CheckBox checkSkin2;
@@ -101,7 +101,7 @@ public class ViewManager {
      * Initialise l'onglet Start du menu
      */
     private void initStartSubScene() {
-        mainSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
+        mainSubScene = new SnakeSubScene("src/ressource/image/SubScene.png");
         mainSubScene.setLayoutX(85);
         AnchorPane mainRoot = (AnchorPane) mainSubScene.getRoot();
 
@@ -215,7 +215,7 @@ public class ViewManager {
      * Initialise l'onglet Score du menu
      */
     private void initScoreSubScene() {
-        scoreSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
+        scoreSubScene = new SnakeSubScene("src/ressource/image/SubScene.png");
 
         highScoreLabel = new Label();
         highScoreLabel.getStylesheets().add(css);
@@ -244,7 +244,7 @@ public class ViewManager {
      * Initialise l'onglet Setting du menu
      */
     private void initSettingSubScene() {
-        settingSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
+        settingSubScene = new SnakeSubScene("src/ressource/image/SubScene.png");
         AnchorPane settingRoot = (AnchorPane) settingSubScene.getRoot();
 
         // creation des checkBox
@@ -286,7 +286,7 @@ public class ViewManager {
      * Initialise l'onglet Skin du menu
      */
     private void initSkinSubScene() {
-        skinSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
+        skinSubScene = new SnakeSubScene("src/ressource/image/SubScene.png");
 
         Label skinLabel = new Label("Choisis ton skin");
         makeLabel(skinLabel, 250, 203);
@@ -423,19 +423,19 @@ public class ViewManager {
         label.setLayoutY(y);
     }
 
-    public AdvancedSnakeSubScene getScoreSubScene() {
+    public SnakeSubScene getScoreSubScene() {
         return scoreSubScene;
     }
 
-    public AdvancedSnakeSubScene getSettingSubScene() {
+    public SnakeSubScene getSettingSubScene() {
         return settingSubScene;
     }
 
-    public AdvancedSnakeSubScene getSkinSubScene() {
+    public SnakeSubScene getSkinSubScene() {
         return skinSubScene;
     }
 
-    public AdvancedSnakeSubScene getMainSubScene() { return mainSubScene; }
+    public SnakeSubScene getMainSubScene() { return mainSubScene; }
 
     public CheckBox getPowerApples() {
         return powerApples;

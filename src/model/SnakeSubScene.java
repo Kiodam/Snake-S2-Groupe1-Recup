@@ -8,11 +8,15 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class AdvancedSnakeSubScene extends SubScene {
+public class SnakeSubScene extends SubScene {
 
     private final int WIDTH = 630;
 
-    public AdvancedSnakeSubScene(String IMAGE_BACKGROUND) {
+    /**
+     * Scène principale qui montre le menu
+     * @param IMAGE_BACKGROUND image de fond pour le menu principale
+     */
+    public SnakeSubScene(String IMAGE_BACKGROUND) {
         super(new AnchorPane(), 630, 550);
         int HEIGHT = 517;
         prefWidth(HEIGHT); prefHeight(WIDTH);
@@ -28,6 +32,9 @@ public class AdvancedSnakeSubScene extends SubScene {
         setEffect(dropShadow);
     }
 
+    /**
+     * permet la transition d'un menu à un autre
+     */
     public void translateSubSceneIn() {
         TranslateTransition animTransition = new TranslateTransition();
         animTransition.setDuration(Duration.seconds(0.3));
@@ -36,6 +43,9 @@ public class AdvancedSnakeSubScene extends SubScene {
         animTransition.play();
     }
 
+    /**
+     * permet la transition d'un menu à un autre
+     */
     public void translateSubSceneOut() {
         TranslateTransition animTransition = new TranslateTransition();
         animTransition.setDuration(Duration.seconds(0.3));
@@ -44,6 +54,9 @@ public class AdvancedSnakeSubScene extends SubScene {
         animTransition.play();
     }
 
+    /**
+     * permet la transition d'un menu à la vue principale
+     */
     public void translateSubSceneOutMain() {
         TranslateTransition animTransition = new TranslateTransition();
         animTransition.setDuration(Duration.seconds(0.3));
