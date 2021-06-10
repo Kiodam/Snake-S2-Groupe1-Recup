@@ -95,6 +95,7 @@ public class GameController {
             gameView.gameWon();
             gameView.gameOver(snake);
             gameView.updateScoreLabel();
+            gameView.updateMultiplicatorLabel();
             gameView.updateAppleGridPane();
         }
     }));
@@ -210,6 +211,7 @@ public class GameController {
         gameView.gameOver(snake);
         gameView.updateScoreLabel();
         gameView.updateAppleGridPane();
+        gameView.updateMultiplicatorLabel();
         gameView.viewHighScore.setVisible(false);
         gameView.restartButton.setVisible(false);
         gameView.returnButton.setVisible(false);

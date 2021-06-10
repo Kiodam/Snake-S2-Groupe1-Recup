@@ -45,8 +45,8 @@ public class GameView {
     public Label gameOverLabel;
     public Label gameWonLabel;
     public Label scoreLabel;
-    public Label timeLabel;
-    public TilePane tileTime;
+    public Label multiplicatorLabel;
+    public TilePane tileMultiplicator;
     public TilePane tileButtons;
     public GridPane gridPaneApple;
 
@@ -110,7 +110,7 @@ public class GameView {
         scoreLabel.setFont(new Font("Arial", 20));
         scoreLabel.setVisible(true);
 
-        tileTime = new TilePane();
+        tileMultiplicator = new TilePane();
 
         ImageView redAppleImage = new ImageView();
         makeAppleImages(redAppleImage, redApple);
@@ -132,15 +132,15 @@ public class GameView {
         makeAppleImages(brownAppleImage, brownApple);
         nbBrownAppleImage = new Label(" : 0  ");
 
-        timeLabel = new Label("Time : \n ");
-        timeLabel.setId("scoreLabel");
-        timeLabel.getStylesheets().add(css);
-        timeLabel.setFont(new Font("Arial", 20));
-        timeLabel.setVisible(true);
+        multiplicatorLabel = new Label("point x "+Multiplicator.getCoef()+"\n ");
+        multiplicatorLabel.setId("scoreLabel");
+        multiplicatorLabel.getStylesheets().add(css);
+        multiplicatorLabel.setFont(new Font("Arial", 20));
+        multiplicatorLabel.setVisible(true);
 
-        tileTime.getChildren().add(timeLabel);
-        timeLabel.setAlignment(Pos.CENTER_LEFT);
-        tileTime.setAlignment(Pos.BOTTOM_RIGHT);
+        tileMultiplicator.getChildren().add(multiplicatorLabel);
+        multiplicatorLabel.setAlignment(Pos.CENTER_LEFT);
+        tileMultiplicator.setAlignment(Pos.BOTTOM_RIGHT);
 
         gridPaneApple = new GridPane();
         gridPaneApple.add(redAppleImage,0,0);
@@ -434,6 +434,16 @@ public class GameView {
         nbYellowAppleImage.setText(" : "+SpeedItem.getNbSpeedEaten()+"  ");
         nbRainbowAppleImage.setText(" : "+GhostWallItem.getNbGhostEaten()+"  ");
         nbBrownAppleImage.setText(" : "+ObstacleItem.getNbObstacleEaten()+"  ");
+    }
+
+    /**
+     *Met à jour multiplicatorLabel avec le dernier multiplicator
+     */
+    public void updateMultiplicatorLabel() {
+        if (Multiplicator.isActif())
+            multiplicatorLabel.setText("point x "+Multiplicator.getCoef()+"\n ");
+        else
+            multiplicatorLabel.setText("point x 1\n ");
     }
 
     /**

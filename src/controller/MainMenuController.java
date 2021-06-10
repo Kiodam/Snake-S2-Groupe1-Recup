@@ -112,14 +112,14 @@ public class MainMenuController {
         //créer la scene + lui ajoute les canvas
 
         gameView.makeScene(gameScene, snake, item);
-        gamePane.getChildren().addAll(gameView.gridCanvas,gameView.scoreCanvas,gameView.gridPaneApple ,gameView.tileTime, gameView.tileButtons, gameView.scoreLabel ,gameView.gameOverLabel, gameView.highScoreLabel,gameView.gameWonLabel,gameView.returnButtonScore, gameView.userName);
+        gamePane.getChildren().addAll(gameView.gridCanvas,gameView.scoreCanvas,gameView.gridPaneApple ,gameView.tileMultiplicator, gameView.tileButtons, gameView.scoreLabel ,gameView.gameOverLabel, gameView.highScoreLabel,gameView.gameWonLabel,gameView.returnButtonScore, gameView.userName);
 
         gamePane.setPadding(new Insets(20));
         gamePane.setAlignment(gameView.gameOverLabel, Pos.TOP_CENTER);
         gamePane.setAlignment(gameView.gameWonLabel, Pos.TOP_CENTER);
         gamePane.setAlignment(gameView.highScoreLabel, Pos.CENTER);
         gamePane.setAlignment(gameView.scoreLabel, Pos.BOTTOM_LEFT);
-        gamePane.setAlignment(gameView.tileTime, Pos.BOTTOM_RIGHT);
+        gamePane.setAlignment(gameView.tileMultiplicator, Pos.BOTTOM_RIGHT);
         gamePane.setAlignment(gameView.returnButtonScore,Pos.TOP_RIGHT);
         gamePane.setAlignment(gameView.gridPaneApple,Pos.BOTTOM_RIGHT);
     }
