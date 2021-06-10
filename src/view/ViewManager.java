@@ -108,7 +108,7 @@ public class ViewManager {
         Label welcomeText = new Label();
         welcomeText.setId("welcomeLabel");
         welcomeText.setTextAlignment(TextAlignment.CENTER);
-        welcomeText.setText("Bienvenue dans Advanced Snake \n" +
+        welcomeText.setText("Bienvenue dans le jeu Snake \n" +
                 "Séléctionner le niveau de difficulté dans les '⚙️ Settings', \n" +
                 "Apprécier vos meilleurs scores dans '\uD83C\uDFC6 Score'.\n\n");
         welcomeText.getStylesheets().add(css);
