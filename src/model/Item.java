@@ -30,28 +30,45 @@ public class Item {
         } while (snake.getHead().equals(pos) || snake.getBody().contains(pos) || obstacle.getPointsObstacles().contains(pos));
     }
 
-
+    /**
+     * @return la position de l'item
+     */
     public Point getPos() {
         return new Point(pos);
     }
 
+    /**
+     * le nombre de points donnés par l'item
+     */
     public int getPoints() {
         int points = 5;
         return points;
     }
 
+    /**
+     * @return l'image de l'item
+     */
     public Image getImage() {
         return image;
     }
 
+    /**
+     * @return le nombre d'item mangé
+     */
     public static int getNbItemEaten() {
         return nbItemEaten;
     }
 
+    /**
+     * réinitialise le nombre d'item mangé
+     */
     public static void resetNbItemEaten() {
         nbItemEaten = 0;
     }
 
+    /**
+     * incrémentation du nombre d'item mangé
+     */
     public static void incNbItemEaten() {
         nbItemEaten++;
     }
