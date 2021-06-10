@@ -478,7 +478,7 @@ public class GameView {
         for (int i = 0; i < highScore.getTotalArray().length; i++) {
             scores.append(highScore.getTotalArray()[i][0]).append("      -      ").append(highScore.getTotalArray()[i][1]).append("\n");
         }
-        highScoreLabel.setText(" HIGH SCORE \n" + scores);
+        highScoreLabel.setText("   HIGH SCORE \n" + scores);
         highScoreLabel.setTextAlignment(TextAlignment.LEFT);
         String chemin = "src/ressource/image/backgroundHighScore.png";
         highScoreLabel.setStyle("-fx-background-image: url('" + chemin + "');" +
