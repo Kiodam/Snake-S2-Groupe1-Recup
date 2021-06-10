@@ -6,8 +6,6 @@ import javafx.scene.paint.Color;
  * Garede en mémoire des infomations du jeu ( vitesse , score ... )
  */
 public class Game {
-//    private Color color = Color.web("ccffff");
-//    private Color color = Color.web("ffc1d6");
     private Color color = Color.web("ccffff");
     private int width;
     private int height;
