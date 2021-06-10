@@ -1,0 +1,154 @@
+@font-face {
+    src: url("../font/IBMPlexMono/IBMPlexMono-Light.ttf");
+}
+@font-face {
+    src: url("../font/DotGothic16-Regular.ttf");
+}
+
+.root {
+    -fx-background-color:  #ffffad;
+}
+
+.check-box {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 15px;
+    -fx-font-weight: 300;
+}
+
+.button {
+    -fx-font-family: "DotGothic16";
+    -fx-font-size: 18px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffdb95;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 150 60;
+    -fx-background-position: center;
+}
+
+#btn_main {
+    -fx-opacity: 0;
+}
+
+.button:hover{
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #ffb673;
+}
+
+/*.startAndQuitBtn:pressed {*/
+/*    -fx-font-family: "DotGothic16";*/
+/*    -fx-font-size: 18px;*/
+/*    -fx-text-fill: #000000;*/
+/*    -fx-background-image: url("../image/btn_StartAndQuit_pressed.png");*/
+/*    !*-fx-background-color: #FFFFAD;*!*/
+/*    -fx-background-repeat: no-repeat;*/
+/*    -fx-background-size: 115 40;*/
+/*}*/
+
+.label {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 30px;
+}
+
+.check-box .box {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-background-color: white;
+    -fx-border-radius: 3px;
+    -fx-border-color: #707063ff;
+    -fx-font-weight: 100;
+}
+
+.check-box.label {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 100px;
+    -fx-font-weight: 200;
+}
+
+.check-box .box {
+    -fx-background-color: #CCFFFF;
+}
+
+.check-box:selected .mark {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-background-color: #ff245b;
+    -fx-font-weight: 200;
+}
+
+.check-box:selected .box {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-background-color: #95FFFF;
+    -fx-border-radius:3px;
+    -fx-border-color:#707063ff;
+}
+
+.text-field {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 15px;
+    -fx-background-color: #CCFFFF;
+    -fx-border-radius: 3px;
+    -fx-text-inner-color: #000000;
+    -fx-border-color: #707063ff;
+}
+
+.text-field:focused {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 15px;
+    -fx-background-color: #95FFFF;
+    -fx-border-radius:3px;
+    -fx-text-inner-color: #ff245b;
+    -fx-border-color: #3F3F3E;
+    -fx-font-weight: 200;
+    -fx-accent: #463ae5;
+}
+
+#backgroundPane {
+    -fx-background-image: url("../image/Bg_Animated.gif");
+    /*-fx-background-color: #DCC8FF;*/
+    -fx-background-size: 800 800;
+}
+
+#welcomeLabel {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 20px;
+    -fx-font-weight: 100;
+    -fx-text-alignment: center;
+    -fx-padding: 100px 30px 60px 30px;
+}
+
+#applelabel {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 15px;
+    -fx-font-weight: 100;
+    -fx-text-alignment: center;
+    -fx-padding: 3px;
+}
+
+#gameOverLabel {
+    -fx-font-family: "DotGothic16";
+    -fx-font-size: 30px;
+}
+#gameWonLabel {
+    -fx-font-family: "DotGothic16";
+    -fx-font-size: 30px;
+}
+#scoreLabel {
+    -fx-font-family: "DotGothic16";
+    -fx-font-size: 20px;
+}
+#highScoreButton {
+    -fx-font-family: "DotGothic16";
+    -fx-padding: 15px;
+    -fx-background-size: 160 50;
+    -fx-font-size: 15px;
+}
+#highScoreLabel {
+    -fx-font-family: "IBM Plex Mono";
+    -fx-font-size: 20px;
+}
+#userNameTextField {
+    -fx-font-family: "DotGothic16";;
+    -fx-font-size: 15px;
+}

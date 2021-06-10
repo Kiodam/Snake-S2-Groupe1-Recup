@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="backgroundPane" maxHeight="800.0" maxWidth="800.0" minHeight="500.0" minWidth="550.0" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.MainMenuController">
+    <stylesheets>
+        <URL value="@../ressource/style/styling.css" />
+    </stylesheets>
+    <children>
+        <Button fx:id="btn_main" minHeight="200.0" minWidth="600.0" layoutX="100" mnemonicParsing="false" onAction="#handleMain"/>
+        <Label id="title" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="-3.0" prefHeight="35.0" prefWidth="474.0" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="-3.0" />
+        <HBox alignment="TOP_CENTER" layoutX="85.0" layoutY="125.0" prefHeight="78.0" prefWidth="630.0" spacing="20.0">
+
+            <children>
+                <Button fx:id="btn_start" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleStart" prefHeight="40.0" prefWidth="100.0" text="Start" textFill="WHITE" />
+                <Button fx:id="btn_score" minHeight="40.0" minWidth="115.0" mnemonicParsing="false" onAction="#handleScore" prefHeight="40.0" prefWidth="115.0" text="🏆 Scores" textFill="WHITE" />
+                <Button fx:id="btn_setting" minHeight="40.0" minWidth="125.0" mnemonicParsing="false" onAction="#handleSetting" prefHeight="40.0" prefWidth="125.0" text="⚙️ Settings" textFill="WHITE" />
+                <Button fx:id="btn_skin" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#handleSkin" prefHeight="40.0" prefWidth="80.0" text="Skin" textFill="WHITE" />
+                <Button fx:id="btn_quit" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="40.0" prefWidth="100.0" text="Quit" textFill="WHITE" />
+            </children>
+            <padding>
+                <Insets top="8.0" />
+            </padding>
+            <effect>
+                <DropShadow color="#00000049" />
+            </effect>
+        </HBox>
+    </children>
+</AnchorPane>
