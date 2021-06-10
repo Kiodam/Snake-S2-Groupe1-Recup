@@ -1,9 +1,7 @@
 package src.view;
 
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -103,7 +101,7 @@ public class ViewManager {
      * Initialise l'onglet Start du menu
      */
     private void initStartSubScene() {
-        mainSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene2.png");
+        mainSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
         mainSubScene.setLayoutX(85);
         AnchorPane mainRoot = (AnchorPane) mainSubScene.getRoot();
 
@@ -217,7 +215,7 @@ public class ViewManager {
      * Initialise l'onglet Score du menu
      */
     private void initScoreSubScene() {
-        scoreSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene2.png");
+        scoreSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
 
         highScoreLabel = new Label();
         highScoreLabel.getStylesheets().add(css);
@@ -246,7 +244,7 @@ public class ViewManager {
      * Initialise l'onglet Setting du menu
      */
     private void initSettingSubScene() {
-        settingSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene2.png");
+        settingSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
         AnchorPane settingRoot = (AnchorPane) settingSubScene.getRoot();
 
         // creation des checkBox
@@ -288,7 +286,7 @@ public class ViewManager {
      * Initialise l'onglet Skin du menu
      */
     private void initSkinSubScene() {
-        skinSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene2.png");
+        skinSubScene = new AdvancedSnakeSubScene("src/ressource/image/SubScene.png");
 
         Label skinLabel = new Label("Choisis ton skin");
         makeLabel(skinLabel, 250, 203);
