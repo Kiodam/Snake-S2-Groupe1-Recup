@@ -98,28 +98,43 @@ public class Game {
     }
 
     /**
-     * @return
+     * @return le coefficient multiplicateur
      */
     public double getMultiplier() {
         return multiplier;
     }
 
+    /**
+     * @param n ajoute un point multiplié par le coef
+     */
     public void addPoints(int n) {
         scorePoints += n * Multiplicator.getCoef();
     }
 
+    /**
+     * @return le nombre de point
+     */
     public int getScorePoints() {
         return scorePoints;
     }
 
+    /**
+     * @return true s'il y a des pouvoirs sinon false
+     */
     public boolean isPowerUp() {
         return powerUp;
     }
 
+    /**
+     * @return la vitesse pour le jeu
+     */
     public double getSpeed() {
         return speed;
     }
 
+    /**
+     * @return true si les bords sont annulés false sinon
+     */
     public boolean isNoBorder() {
         return noBorder;
     }

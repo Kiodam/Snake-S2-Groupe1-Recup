@@ -28,9 +28,6 @@ public class ViewManager {
     //Gamestage
     private Stage gameStage;
 
-    //Icon
-    private Image snakeLogo = new Image("src/ressource/image/SnakeLogoWhite.png");
-
 
     //mainSubScene
     private SnakeSubScene mainSubScene;
@@ -87,7 +84,6 @@ public class ViewManager {
 
         primaryStage.setScene(mainScene);
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(snakeLogo);
         primaryStage.setTitle("PTUTS2 - Groupe 1 - Snake");
         primaryStage.show();
     }
@@ -464,7 +460,6 @@ public class ViewManager {
     public void initGameStage() {
         gameStage = new Stage();
         gameStage.setTitle("PTUTS2 - Groupe 1 - Snake");
-        gameStage.getIcons().add(snakeLogo);
         gameStage.setResizable(false);
     }
 

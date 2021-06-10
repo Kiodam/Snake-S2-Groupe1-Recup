@@ -9,8 +9,6 @@ import java.util.Random;
 /**
 * Modèle destiné à contenir des informations sur une instance de power.
 **/
-
-
 public class Item {
     private Point pos;
     private Image image = new Image("src/ressource/image/apple.png");
@@ -31,6 +29,7 @@ public class Item {
             pos = new Point(tx, ty);
         } while (snake.getHead().equals(pos) || snake.getBody().contains(pos) || obstacle.getPointsObstacles().contains(pos));
     }
+
 
     public Point getPos() {
         return new Point(pos);
