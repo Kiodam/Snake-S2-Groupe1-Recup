@@ -250,13 +250,11 @@ public class GameController {
         } else if (item instanceof GhostWallItem) {
             snake.ignoreBorders(true);
             GhostWallItem.incNbGhostEaten();
-
         } else if (item instanceof ScoreItem) {
             ScoreItem.incNbScoreEaten();
 
         } else if (item instanceof Multiplicator) {
             ((Multiplicator) item).runTimer();
-
         } else {
             Item.incNbItemEaten();
         }
