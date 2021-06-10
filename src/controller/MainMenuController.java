@@ -30,7 +30,7 @@ public class MainMenuController {
      * lance le jeu
      */
     public void handleStart() {
-        powerUp = viewManager.getPowerApples().isSelected();
+        powerUp = viewManager.getPowerItems().isSelected();
         setGridSize(viewManager.getInputGridSizeX().getText(), viewManager.getInputGridSizeY().getText());
         setDifficulty();
 
@@ -100,7 +100,7 @@ public class MainMenuController {
         Snake snake = new Snake(game.getWidth(), game.getHeight(), game.isNoBorder(), obstacle);
         Item item = new Item(game.getWidth(), game.getHeight(), snake, obstacle);
 
-        //Instances de view et controller qui ont les mêmes instances que snake et apple.
+        //Instances de view et controller qui ont les mêmes instances que snake et item.
         GameView gameView = new GameView(game);
         GameController controller = new GameController(snake, item, game, gameView, obstacle, gameStage);
 
@@ -112,7 +112,7 @@ public class MainMenuController {
         //créer la scene + lui ajoute les canvas
 
         gameView.makeScene(gameScene, snake, item);
-        gamePane.getChildren().addAll(gameView.gridCanvas,gameView.scoreCanvas,gameView.gridPaneApple ,gameView.tileMultiplicator, gameView.tileButtons, gameView.scoreLabel ,gameView.gameOverLabel, gameView.highScoreLabel,gameView.gameWonLabel,gameView.returnButtonScore, gameView.userName);
+        gamePane.getChildren().addAll(gameView.gridCanvas,gameView.scoreCanvas,gameView.gridPaneItem,gameView.tileMultiplicator, gameView.tileButtons, gameView.scoreLabel ,gameView.gameOverLabel, gameView.highScoreLabel,gameView.gameWonLabel,gameView.returnButtonScore, gameView.userName);
 
         gamePane.setPadding(new Insets(20));
         gamePane.setAlignment(gameView.gameOverLabel, Pos.TOP_CENTER);
@@ -121,7 +121,7 @@ public class MainMenuController {
         gamePane.setAlignment(gameView.scoreLabel, Pos.BOTTOM_LEFT);
         gamePane.setAlignment(gameView.tileMultiplicator, Pos.BOTTOM_RIGHT);
         gamePane.setAlignment(gameView.returnButtonScore,Pos.TOP_RIGHT);
-        gamePane.setAlignment(gameView.gridPaneApple,Pos.BOTTOM_RIGHT);
+        gamePane.setAlignment(gameView.gridPaneItem,Pos.BOTTOM_RIGHT);
     }
 
     /**

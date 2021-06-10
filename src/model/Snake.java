@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
 * méthode pour les déplacements du serpent
  * vérifie que le serpent ne se touche pas
- * vérifie qu ele serpent ne sort pas de la grille
+ * vérifie que le serpent ne sort pas de la grille
  */
 public class Snake {
     public static String cheminSkin = "src/ressource/image/Skin/Green/";
@@ -25,7 +25,6 @@ public class Snake {
     private boolean ignoreBorders = false;
     private boolean noBorder;
     private Obstacle obstacle;
-//    private Image imgInputHead = new Image(Apple.class.getResourceAsStream("../views/res/snakehead.png"));
     private Image imgInputHead = new Image(cheminSkin+"snakehead.png");
     private ImageView imageHead = new ImageView(imgInputHead);
     private Image imgInputBody = new Image(cheminSkin+"snakeBody.png");
@@ -35,7 +34,7 @@ public class Snake {
     private Image imgInputTail = new Image(cheminSkin+"snakeTail.png");
     private ImageView imageTail = new ImageView(imgInputTail);
     private int snakeDir = 270;
-    private int nbAppleEaten = 0;
+    private int nbItemEaten = 0;
 
     public Snake(int x, int y, boolean noBorder, Obstacle obstacle) {
         this.obstacle = obstacle;
@@ -128,7 +127,7 @@ public class Snake {
      * vérifie que la pomme se situe sur la tête du serpent
      * enlève l'extrémité de la queue
      */
-    public boolean ateApple(Item item) {
+    public boolean ateItem(Item item) {
         if (!head.equals(item.getPos())) {
             body.remove(0);
         }
@@ -149,20 +148,26 @@ public class Snake {
         return body.contains(head);
     }
 
+    /**
+     * incrémentation du nombre d'item mangé
+     */
+    public void incNbItemEaten() {
+        this.nbItemEaten++;
+    }
+
+    /**
+     * réinitialise le nombre d'item mangé
+     */
+    public void resetNbItemEaten() {
+        this.nbItemEaten = 0;
+    }
+
     public ArrayList<Point> getBody() {
         return new ArrayList<>(body);
     }
 
     public Point getHead() {
         return new Point(head);
-    }
-
-    public Color getHeadColor() {
-        return headColor;
-    }
-
-    public Color getBodyColor() {
-        return bodyColor;
     }
 
     public boolean getDead() {
@@ -193,15 +198,7 @@ public class Snake {
         return imageTail;
     }
 
-    public int getNbAppleEaten() {
-        return nbAppleEaten;
-    }
-
-    public void setNbAppleEaten(int nbAppleEaten) {
-        this.nbAppleEaten = nbAppleEaten;
-    }
-
-    public void resetNbAppleEaten() {
-        this.nbAppleEaten = 0;
+    public int getNbItemEaten() {
+        return nbItemEaten;
     }
 }
