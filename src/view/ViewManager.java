@@ -137,13 +137,13 @@ public class ViewManager {
         makeItemLabels(redAppleText);
 
         Label berryItemText = new Label();
-        berryItemText.setText("15 points");
+        berryItemText.setText("10 points");
         makeItemLabels(berryItemText);
 
         Label bananaText = new Label();
         bananaText.setText("Soit plus\n" +
                 "rapide\n" +
-                "5 points");
+                "15 points");
         makeItemLabels(bananaText);
 
         Label ghostItemText = new Label();
