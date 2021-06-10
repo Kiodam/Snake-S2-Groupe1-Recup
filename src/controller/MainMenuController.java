@@ -156,14 +156,29 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Retourne le viewManager
+     *
+     * @return le viewManager
+     */
     public ViewManager getViewManager() {
         return viewManager;
     }
 
+    /**
+     * Retourne la xValue
+     *
+     * @return la xValue
+     */
     public static int getxValue() {
         return xVALUE;
     }
 
+    /**
+     * Retourne la yValue
+     *
+     * @return la yValue
+     */
     public static int getyVALUE() {
         return yVALUE;
     }

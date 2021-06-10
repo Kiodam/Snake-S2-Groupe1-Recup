@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
@@ -476,8 +478,12 @@ public class GameView {
         for (int i = 0; i < highScore.getTotalArray().length; i++) {
             scores.append(highScore.getTotalArray()[i][0]).append("      -      ").append(highScore.getTotalArray()[i][1]).append("\n");
         }
-        highScoreLabel.setText("HIGH SCORE \n" + scores);
+        highScoreLabel.setText(" HIGH SCORE \n" + scores);
         highScoreLabel.setTextAlignment(TextAlignment.LEFT);
+        String chemin = "src/ressource/image/backgroundHighScore.png";
+        highScoreLabel.setStyle("-fx-background-image: url('" + chemin + "');" +
+                                "-fx-background-position: center center;"+
+                                "-fx-padding: 25 50 0 50");
         ViewManager.getHighScoreLabel().setText("HIGH SCORE \n" + scores);
         highScoreLabel.setVisible(true);
     }
