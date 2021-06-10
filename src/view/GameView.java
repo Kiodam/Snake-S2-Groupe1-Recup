@@ -73,7 +73,7 @@ public class GameView {
     public Label highScoreLabel = new Label();
     private boolean highScoreVis = false;
     public TextField userName = new TextField();
-    private int[][] turnArray = new int[MainMenuController.getxValue()][MainMenuController.getyValue()];
+    private int[][] turnArray = new int[MainMenuController.getxValue()][MainMenuController.getyVALUE()];
 
     public GameView(Game game) {
         this.game = game;

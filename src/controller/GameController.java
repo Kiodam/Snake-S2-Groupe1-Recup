@@ -224,20 +224,6 @@ public class GameController {
         Multiplicator.setIsActif(false);
     }
 
-    /*
-                if (snake.getNbAppleEaten() >= obstacle.getNbAppleToEat() && Obstacle.getIsBlocked()) {
-                    obstacle.reset();
-                    snake.setNbAppleEaten(0);
-                    obstacle.incrAppleToEat();
-                    Obstacle.setIsBlocked(false);
-                }
-
-                if (game.gameWon()) {
-                    gameView.drawGrid(apple, snake, obstacle, gameView.graphicsContext);
-                    return;
-                }
-     */
-
     /**
      * gérer les actions selon le type de pomme appelé
      */
@@ -246,8 +232,6 @@ public class GameController {
         animation.setRate(game.getSpeed());
         snake.ignoreBorders(false);
         snake.setNbAppleEaten(snake.getNbAppleEaten() + 1);
-        System.out.println("Nb apple to eat : " + obstacle.getNbAppleToEat());
-        System.out.println("Nb apple eaten : " + snake.getNbAppleEaten());
 
         if (item instanceof SpeedItem) {
             SpeedItem tempApple = (SpeedItem) item;

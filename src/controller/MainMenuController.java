@@ -15,8 +15,8 @@ import src.view.ViewManager;
 
 public class MainMenuController {
 
-    private static int X_VALUE = 20;
-    private static int Y_VALUE = 20;
+    private static int xVALUE = 20;
+    private static int yVALUE = 20;
 
     private Scene gameScene;
 
@@ -95,7 +95,7 @@ public class MainMenuController {
      */
     private void launchSnake(Stage gameStage) {
         //Créer le jeu, obstacle , snake, pommeEnter
-        Game game = new Game(X_VALUE, Y_VALUE, powerUp, difficulty);
+        Game game = new Game(xVALUE, yVALUE, powerUp, difficulty);
         Obstacle obstacle = new Obstacle(game.getWidth(), game.getHeight());
         Snake snake = new Snake(game.getWidth(), game.getHeight(), game.isNoBorder(), obstacle);
         Item item = new Item(game.getWidth(), game.getHeight(), snake, obstacle);
@@ -138,8 +138,8 @@ public class MainMenuController {
             }
         }
         if (validGridSize) {
-            X_VALUE = Integer.parseInt(width);
-            Y_VALUE = Integer.parseInt(height);
+            xVALUE = Integer.parseInt(width);
+            yVALUE = Integer.parseInt(height);
         }
     }
 
@@ -161,11 +161,11 @@ public class MainMenuController {
     }
 
     public static int getxValue() {
-        return X_VALUE;
+        return xVALUE;
     }
 
-    public static int getyValue() {
-        return Y_VALUE;
+    public static int getyVALUE() {
+        return yVALUE;
     }
 }
 
