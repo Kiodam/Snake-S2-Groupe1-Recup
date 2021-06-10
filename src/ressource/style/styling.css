@@ -108,7 +108,7 @@
     -fx-padding: 100px 30px 60px 30px;
 }
 
-#applelabel {
+#itemLabel {
     -fx-font-family: "IBM Plex Mono";
     -fx-font-size: 15px;
     -fx-font-weight: 100;

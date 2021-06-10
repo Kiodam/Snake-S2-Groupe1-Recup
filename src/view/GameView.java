@@ -42,7 +42,7 @@ public class GameView {
     private Image berry = new Image("src/ressource/image/Food/berry.png");
     private Image ghost = new Image("src/ressource/image/Food/ghost.png");
     private Image banana = new Image("src/ressource/image/Food/banana.png");
-    private Image brownApple = new Image("src/ressource/image/Food/poison.png");
+    private Image ObsItem = new Image("src/ressource/image/Food/poison.png");
 
     public Label gameOverLabel;
     public Label gameWonLabel;
@@ -50,13 +50,13 @@ public class GameView {
     public Label multiplicatorLabel;
     public TilePane tileMultiplicator;
     public TilePane tileButtons;
-    public GridPane gridPaneApple;
+    public GridPane gridPaneItem;
 
     public Label nbRedAppleImage;
-    public Label nbBlueAppleImage;
-    public Label nbYellowAppleImage;
-    public Label nbRainbowAppleImage;
-    public Label nbBrownAppleImage;
+    public Label nbBerryImage;
+    public Label nbBananeImage;
+    public Label nbGhostItemImage;
+    public Label nbObsItemImage;
 
     public Button viewHighScore;
     public Button restartButton;
@@ -115,24 +115,24 @@ public class GameView {
         tileMultiplicator = new TilePane();
 
         ImageView redAppleImage = new ImageView();
-        makeAppleImages(redAppleImage, redApple);
+        makeItemImages(redAppleImage, redApple);
         nbRedAppleImage = new Label(" : 0  ");
 
-        ImageView blueAppleImage = new ImageView();
-        makeAppleImages(blueAppleImage, berry);
-        nbBlueAppleImage = new Label(" : 0  ");
+        ImageView berryImage = new ImageView();
+        makeItemImages(berryImage, berry);
+        nbBerryImage = new Label(" : 0  ");
 
-        ImageView yellowAppleImage = new ImageView();
-        makeAppleImages(yellowAppleImage, banana);
-        nbYellowAppleImage = new Label(" : 0  ");
+        ImageView bananaImage = new ImageView();
+        makeItemImages(bananaImage, banana);
+        nbBananeImage = new Label(" : 0  ");
 
-        ImageView rainbowAppleImage = new ImageView();
-        makeAppleImages(rainbowAppleImage, ghost);
-        nbRainbowAppleImage = new Label(" : 0  ");
+        ImageView ghostImage = new ImageView();
+        makeItemImages(ghostImage, ghost);
+        nbGhostItemImage = new Label(" : 0  ");
 
-        ImageView brownAppleImage = new ImageView();
-        makeAppleImages(brownAppleImage, brownApple);
-        nbBrownAppleImage = new Label(" : 0  ");
+        ImageView obstacleImage = new ImageView();
+        makeItemImages(obstacleImage, ObsItem);
+        nbObsItemImage = new Label(" : 0  ");
 
         multiplicatorLabel = new Label("point x "+Multiplicator.getCoef()+"\n ");
         multiplicatorLabel.setId("scoreLabel");
@@ -144,20 +144,20 @@ public class GameView {
         multiplicatorLabel.setAlignment(Pos.CENTER_LEFT);
         tileMultiplicator.setAlignment(Pos.BOTTOM_RIGHT);
 
-        gridPaneApple = new GridPane();
-        gridPaneApple.add(redAppleImage,0,0);
-        gridPaneApple.add(nbRedAppleImage,1,0);
-        gridPaneApple.add(blueAppleImage,2,0);
-        gridPaneApple.add(nbBlueAppleImage,3,0);
-        gridPaneApple.add(yellowAppleImage,0,1);
-        gridPaneApple.add(nbYellowAppleImage,1,1);
-        gridPaneApple.add(rainbowAppleImage,2,1);
-        gridPaneApple.add(nbRainbowAppleImage,3,1);
-        gridPaneApple.add(brownAppleImage,0,2);
-        gridPaneApple.add(nbBrownAppleImage,1,2);
+        gridPaneItem = new GridPane();
+        gridPaneItem.add(redAppleImage,0,0);
+        gridPaneItem.add(nbRedAppleImage,1,0);
+        gridPaneItem.add(berryImage,2,0);
+        gridPaneItem.add(nbBerryImage,3,0);
+        gridPaneItem.add(bananaImage,0,1);
+        gridPaneItem.add(nbBananeImage,1,1);
+        gridPaneItem.add(ghostImage,2,1);
+        gridPaneItem.add(nbGhostItemImage,3,1);
+        gridPaneItem.add(obstacleImage,0,2);
+        gridPaneItem.add(nbObsItemImage,1,2);
 
-        gridPaneApple.setAlignment(Pos.BOTTOM_CENTER);
-        gridPaneApple.setVgap(5);
+        gridPaneItem.setAlignment(Pos.BOTTOM_CENTER);
+        gridPaneItem.setVgap(5);
 
         viewHighScore = new Button();
         viewHighScore.setId("highScoreButton");
@@ -428,14 +428,14 @@ public class GameView {
     }
 
     /**
-     *Met à jour gridPaneApple
+     *Met à jour gridPaneItem
      */
-    public void updateAppleGridPane() {
+    public void updateItemGridPane() {
         nbRedAppleImage.setText(" : "+Item.getNbItemEaten()+"  ");
-        nbBlueAppleImage.setText(" : "+ScoreItem.getNbScoreEaten()+"  ");
-        nbYellowAppleImage.setText(" : "+SpeedItem.getNbSpeedEaten()+"  ");
-        nbRainbowAppleImage.setText(" : "+GhostWallItem.getNbGhostEaten()+"  ");
-        nbBrownAppleImage.setText(" : "+ObstacleItem.getNbObstacleEaten()+"  ");
+        nbBerryImage.setText(" : "+ScoreItem.getNbScoreEaten()+"  ");
+        nbBananeImage.setText(" : "+SpeedItem.getNbSpeedEaten()+"  ");
+        nbGhostItemImage.setText(" : "+GhostWallItem.getNbGhostEaten()+"  ");
+        nbObsItemImage.setText(" : "+ObstacleItem.getNbObstacleEaten()+"  ");
     }
 
     /**
@@ -503,7 +503,7 @@ public class GameView {
         });
     }
 
-    private void makeAppleImages(ImageView imageView, Image image) {
+    private void makeItemImages(ImageView imageView, Image image) {
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
         imageView.setFitWidth(20);
@@ -514,19 +514,19 @@ public class GameView {
         return nbRedAppleImage;
     }
 
-    public Label getNbBlueAppleImage() {
-        return nbBlueAppleImage;
+    public Label getNbBerryImage() {
+        return nbBerryImage;
     }
 
-    public Label getNbYellowAppleImage() {
-        return nbYellowAppleImage;
+    public Label getNbBananeImage() {
+        return nbBananeImage;
     }
 
-    public Label getNbRainbowAppleImage() {
-        return nbRainbowAppleImage;
+    public Label getNbGhostItemImage() {
+        return nbGhostItemImage;
     }
 
-    public Label getNbBrownAppleImage() {
-        return nbBrownAppleImage;
+    public Label getNbObsItemImage() {
+        return nbObsItemImage;
     }
 }

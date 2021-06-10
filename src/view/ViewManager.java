@@ -36,7 +36,7 @@ public class ViewManager {
     private Image berry = new Image("src/ressource/image/Food/berry.png");
     private Image ghost = new Image("src/ressource/image/Food/ghost.png");
     private Image banana = new Image("src/ressource/image/Food/banana.png");
-    private Image brownApple = new Image("src/ressource/image/Food/poison.png");
+    private Image obsItem = new Image("src/ressource/image/Food/poison.png");
     private Image multiplicator = new Image("src/ressource/image/Multiplicator/multiplicators.png");
 
     //ScoreSubScene
@@ -45,7 +45,7 @@ public class ViewManager {
 
     //SettingSubScene
     private SnakeSubScene settingSubScene;
-    private CheckBox powerApples;
+    private CheckBox powerItems;
     private CheckBox checkEasy;
     private CheckBox checkMedium;
     private CheckBox checkHard;
@@ -110,54 +110,54 @@ public class ViewManager {
         welcomeText.getStylesheets().add(css);
 
         // Création des box contenant les images et les descriptions
-        HBox applebox = new HBox();
+        HBox itembox = new HBox();
         HBox labelbox = new HBox();
 
         ImageView redAppleImage = new ImageView();
-        makeAppleImages(redAppleImage, redApple);
+        makeItemImages(redAppleImage, redApple);
 
-        ImageView blueAppleImage = new ImageView();
-        makeAppleImages(blueAppleImage, berry);
+        ImageView berryImage = new ImageView();
+        makeItemImages(berryImage, berry);
 
-        ImageView yellowAppleImage = new ImageView();
-        makeAppleImages(yellowAppleImage, banana);
+        ImageView bananaImage = new ImageView();
+        makeItemImages(bananaImage, banana);
 
-        ImageView rainbowAppleImage = new ImageView();
-        makeAppleImages(rainbowAppleImage, ghost);
+        ImageView ghostImage = new ImageView();
+        makeItemImages(ghostImage, ghost);
 
-        ImageView brownAppleImage = new ImageView();
-        makeAppleImages(brownAppleImage, brownApple);
+        ImageView obsItemImage = new ImageView();
+        makeItemImages(obsItemImage, obsItem);
 
         ImageView multiplicatorImage = new ImageView();
-        makeAppleImages(multiplicatorImage, multiplicator);
+        makeItemImages(multiplicatorImage, multiplicator);
 
 
         Label redAppleText = new Label();
         redAppleText.setText("5 points");
-        makeAppleLabels(redAppleText);
+        makeItemLabels(redAppleText);
 
-        Label blueAppleText = new Label();
-        blueAppleText.setText("15 points");
-        makeAppleLabels(blueAppleText);
+        Label berryItemText = new Label();
+        berryItemText.setText("15 points");
+        makeItemLabels(berryItemText);
 
-        Label yellowAppleText = new Label();
-        yellowAppleText.setText("Soit plus\n" +
+        Label bananaText = new Label();
+        bananaText.setText("Soit plus\n" +
                 "rapide\n" +
                 "5 points");
-        makeAppleLabels(yellowAppleText);
+        makeItemLabels(bananaText);
 
-        Label rainbowAppleText = new Label();
-        rainbowAppleText.setText("Traverser\n" +
+        Label ghostItemText = new Label();
+        ghostItemText.setText("Traverser\n" +
                 "les murs\n" +
                 "5 points");
-        makeAppleLabels(rainbowAppleText);
+        makeItemLabels(ghostItemText);
 
-        Label brownAppleText = new Label();
-        brownAppleText.setText("Place\n" +
+        Label obsItemText = new Label();
+        obsItemText.setText("Place\n" +
                 "des\n" +
                 "obstacles\n" +
                 "5 points");
-        makeAppleLabels(brownAppleText);
+        makeItemLabels(obsItemText);
 
         Label multiplicatorText = new Label();
         multiplicatorText.setText("Multiplie\n"+
@@ -171,15 +171,15 @@ public class ViewManager {
         labelbox.setLayoutX(10);
         labelbox.setLayoutY(320);
 
-        labelbox.getChildren().addAll(redAppleText, blueAppleText, yellowAppleText, rainbowAppleText, brownAppleText, multiplicatorText);
+        labelbox.getChildren().addAll(redAppleText, berryItemText, bananaText, ghostItemText, obsItemText, multiplicatorText);
 
-        applebox.setSpacing(60);
-        applebox.setLayoutX(15);
-        applebox.setLayoutY(270);
+        itembox.setSpacing(60);
+        itembox.setLayoutX(15);
+        itembox.setLayoutY(270);
 
-        applebox.getChildren().addAll(redAppleImage, blueAppleImage, yellowAppleImage, rainbowAppleImage, brownAppleImage, multiplicatorImage);
+        itembox.getChildren().addAll(redAppleImage, berryImage, bananaImage, ghostImage, obsItemImage, multiplicatorImage);
 
-        mainRoot.getChildren().addAll(welcomeText, applebox, labelbox);
+        mainRoot.getChildren().addAll(welcomeText, itembox, labelbox);
     }
 
     /**
@@ -188,7 +188,7 @@ public class ViewManager {
      * @param imageView l'imageView a set
      * @param image l'image a ajouter a l'imageView
      */
-    private void makeAppleImages(ImageView imageView, Image image) {
+    private void makeItemImages(ImageView imageView, Image image) {
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
         imageView.setFitWidth(50);
@@ -200,8 +200,8 @@ public class ViewManager {
      *
      * @param label le label a set
      */
-    private void makeAppleLabels(Label label) {
-        label.setId("applelabel");
+    private void makeItemLabels(Label label) {
+        label.setId("itemLabel");
         label.getStylesheets().add(css);
         label.setTextAlignment(TextAlignment.CENTER);
         label.setPrefWidth(100);
@@ -244,8 +244,8 @@ public class ViewManager {
         AnchorPane settingRoot = (AnchorPane) settingSubScene.getRoot();
 
         // creation des checkBox
-        powerApples = new CheckBox("Power Ups");
-        makeCheckBoxSetting(powerApples, true, 100, 200);
+        powerItems = new CheckBox("Power Ups");
+        makeCheckBoxSetting(powerItems, true, 100, 200);
         checkEasy = new CheckBox("Easy");
         makeCheckBoxSetting(checkEasy, false, 100,250);
         checkMedium = new CheckBox("Normal");
@@ -275,7 +275,7 @@ public class ViewManager {
         inputGridSizeX.getStylesheets().add(css);
         inputGridSizeY.getStylesheets().add(css);
 
-        settingRoot.getChildren().addAll(checkEasy, checkMedium, checkHard, powerApples, inputGridSizeX, inputGridSizeY, powerDescription, easyDescription, normalDescription, hardDescription);
+        settingRoot.getChildren().addAll(checkEasy, checkMedium, checkHard, powerItems, inputGridSizeX, inputGridSizeY, powerDescription, easyDescription, normalDescription, hardDescription);
     }
 
     /**
@@ -433,8 +433,8 @@ public class ViewManager {
 
     public SnakeSubScene getMainSubScene() { return mainSubScene; }
 
-    public CheckBox getPowerApples() {
-        return powerApples;
+    public CheckBox getPowerItems() {
+        return powerItems;
     }
 
     public CheckBox getCheckEasy() {

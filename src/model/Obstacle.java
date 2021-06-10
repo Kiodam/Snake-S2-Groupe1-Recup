@@ -115,20 +115,30 @@ public class Obstacle {
 	}
 
 	/**
-	 * incrémentation
+	 * incrémentation du nombbre d'item à manger
 	 */
-	public void incrAppleToEat() {
+	public void incrObstacleItemToEat() {
 		this.nbObstacleItemToEat += 1;
 	}
 
+	/**
+	 * remet le nombre d'item à manger à zéro
+	 */
 	public void resetNbObstacleItemToEat() {
 		this.nbObstacleItemToEat = 3;
 	}
 
+	/**
+	 * @return true si l'item est en cours false sinon
+	 */
 	public static boolean getIsBlocked() {
 		return blocked;
 	}
 
+	/**
+	 * défini si l'item est mangé ou non
+	 * @param blocked true ou false si l'item est mangé ou non
+	 */
 	public static void setIsBlocked(boolean blocked) {
 		Obstacle.blocked = blocked;
 	}

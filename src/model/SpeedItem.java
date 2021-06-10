@@ -9,6 +9,11 @@ public class SpeedItem extends Item {
     private Image image = new Image("src/ressource/image/Food/banana.png");
     private static int nbSpeedEaten;
 
+    /**
+     * @param x Largeur de la fenetre.
+     * @param y La hauteur de la fenetre.
+     * @param snake l'obstacle sur lequel la power ne doit pas être placée.
+     */
     public SpeedItem(int x, int y, Snake snake, Obstacle obstacle) {
         super(x, y, snake, obstacle);
     }

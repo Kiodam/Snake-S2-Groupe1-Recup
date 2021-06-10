@@ -73,7 +73,7 @@ public class GameController {
                 snake.move('D');
             }
 
-            if (!snake.getDead() && snake.ateApple(item)) {
+            if (!snake.getDead() && snake.ateItem(item)) {
                 //   mediaPlayer.play();
                 //    mediaPlayer = new MediaPlayer(coinSound);
                 powerItem();
@@ -96,7 +96,7 @@ public class GameController {
             gameView.gameOver(snake);
             gameView.updateScoreLabel();
             gameView.updateMultiplicatorLabel();
-            gameView.updateAppleGridPane();
+            gameView.updateItemGridPane();
         }
     }));
 
@@ -192,7 +192,7 @@ public class GameController {
         animation.jumpTo(Duration.ZERO);
         animation.stop();
 
-        // Transforme les snake  /  apples comme ils étaient initialement
+        // Transforme les snake  /  items comme ils étaient initialement
         snake = new Snake(game.getWidth(), game.getHeight(), game.isNoBorder(), obstacle);
         item = new Item(game.getWidth(), game.getHeight(), snake, obstacle);
 
@@ -202,7 +202,7 @@ public class GameController {
         keyPressed = false;
         game.resetScore();
         obstacle.reset();
-        snake.setNbAppleEaten(0);
+        snake.resetNbItemEaten();
         obstacle.resetNbObstacleItemToEat();
         resetAllItemEaten();
 
@@ -210,7 +210,7 @@ public class GameController {
         gameView.gameWon();
         gameView.gameOver(snake);
         gameView.updateScoreLabel();
-        gameView.updateAppleGridPane();
+        gameView.updateItemGridPane();
         gameView.updateMultiplicatorLabel();
         gameView.viewHighScore.setVisible(false);
         gameView.restartButton.setVisible(false);
@@ -233,18 +233,18 @@ public class GameController {
         // action à faire quel que soit l'item mangé
         animation.setRate(game.getSpeed());
         snake.ignoreBorders(false);
-        snake.setNbAppleEaten(snake.getNbAppleEaten() + 1);
+        snake.incNbItemEaten();
 
         if (item instanceof SpeedItem) {
-            SpeedItem tempApple = (SpeedItem) item;
-            animation.setRate(game.getSpeed() + tempApple.getSpeedBonus());
+            SpeedItem tempItem = (SpeedItem) item;
+            animation.setRate(game.getSpeed() + tempItem.getSpeedBonus());
             SpeedItem.incNbSpeedEaten();
 
         } else if (item instanceof ObstacleItem) {
             Random rnd = new Random();
             obstacle.newObstacles(snake, item, rnd.nextInt(game.getWidth() * game.getHeight() / Math.max(Math.abs(30 - obstacle.getNbObstableItemToEat()),1) + 3));
             game.decMaxScore(obstacle.getObstacles().size());
-            snake.setNbAppleEaten(0);
+            snake.resetNbItemEaten();
             Obstacle.setIsBlocked(true);
 
         } else if (item instanceof GhostWallItem) {
@@ -259,10 +259,10 @@ public class GameController {
             Item.incNbItemEaten();
         }
 
-        if (snake.getNbAppleEaten() >= obstacle.getNbObstableItemToEat() && Obstacle.getIsBlocked()) {
+        if (snake.getNbItemEaten() >= obstacle.getNbObstableItemToEat() && Obstacle.getIsBlocked()) {
             obstacle.reset();
-            snake.setNbAppleEaten(0);
-            obstacle.incrAppleToEat();
+            snake.resetNbItemEaten();
+            obstacle.incrObstacleItemToEat();
             Obstacle.setIsBlocked(false);
         }
 
