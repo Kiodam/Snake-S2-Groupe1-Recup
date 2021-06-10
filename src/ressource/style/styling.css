@@ -38,16 +38,6 @@
     -fx-background-color: #ffb673;
 }
 
-/*.startAndQuitBtn:pressed {*/
-/*    -fx-font-family: "DotGothic16";*/
-/*    -fx-font-size: 18px;*/
-/*    -fx-text-fill: #000000;*/
-/*    -fx-background-image: url("../image/btn_StartAndQuit_pressed.png");*/
-/*    !*-fx-background-color: #FFFFAD;*!*/
-/*    -fx-background-repeat: no-repeat;*/
-/*    -fx-background-size: 115 40;*/
-/*}*/
-
 .label {
     -fx-font-family: "IBM Plex Mono";
     -fx-font-size: 30px;
