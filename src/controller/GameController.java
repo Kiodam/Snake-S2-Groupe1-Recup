@@ -203,7 +203,7 @@ public class GameController {
         game.resetScore();
         obstacle.reset();
         snake.setNbAppleEaten(0);
-        obstacle.setNbAppleToEat(3);
+        obstacle.resetNbObstacleItemToEat();
         resetAllItemEaten();
 
         // Supression / mise à jour des vues
@@ -242,7 +242,7 @@ public class GameController {
 
         } else if (item instanceof ObstacleItem) {
             Random rnd = new Random();
-            obstacle.newObstacles(snake, item, rnd.nextInt(game.getWidth() * game.getHeight() / Math.max(Math.abs(30 - obstacle.getNbAppleToEat()),1) + 3));
+            obstacle.newObstacles(snake, item, rnd.nextInt(game.getWidth() * game.getHeight() / Math.max(Math.abs(30 - obstacle.getNbObstableItemToEat()),1) + 3));
             game.decMaxScore(obstacle.getObstacles().size());
             snake.setNbAppleEaten(0);
             Obstacle.setIsBlocked(true);
@@ -259,7 +259,7 @@ public class GameController {
             Item.incNbItemEaten();
         }
 
-        if (snake.getNbAppleEaten() >= obstacle.getNbAppleToEat() && Obstacle.getIsBlocked()) {
+        if (snake.getNbAppleEaten() >= obstacle.getNbObstableItemToEat() && Obstacle.getIsBlocked()) {
             obstacle.reset();
             snake.setNbAppleEaten(0);
             obstacle.incrAppleToEat();

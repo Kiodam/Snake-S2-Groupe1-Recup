@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * Bonus qui augemenbte la vitesse du jeu
  * */
 public class SpeedItem extends Item {
-    private Image image = new Image("src/ressource/image/banana.png");
+    private Image image = new Image("src/ressource/image/Food/banana.png");
     private static int nbSpeedEaten;
 
     public SpeedItem(int x, int y, Snake snake, Obstacle obstacle) {

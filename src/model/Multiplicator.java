@@ -24,9 +24,15 @@ public class Multiplicator extends Item {
         }
     };
 
-    private String[] paths = {"src/ressource/image/X2.png", "src/ressource/image/X3.png", "src/ressource/image/X5.png"};
+    // tableau avec les liens pour les différentes images
+    private String[] paths = {"src/ressource/image/Multiplicator/X2.png", "src/ressource/image/Multiplicator/X3.png", "src/ressource/image/Multiplicator/X5.png"};
     private Image image;
 
+    /**
+     * @@param x Largeur de la fenetre.
+     * @param y La hauteur de la fenetre.
+     * @param snake l'obstacle sur lequel la power ne doit pas être placée.
+     */
     public Multiplicator(int x, int y, Snake snake, Obstacle obstacle) {
         super(x, y, snake, obstacle);
         int randInt = random.nextInt(10);
@@ -42,31 +48,52 @@ public class Multiplicator extends Item {
         }
     }
 
+    /**
+     * @return retourne l'image de l'item
+     */
     public Image getImage() {
         return image;
     }
 
+    /**
+     * @return le nombre de points donné par l'item
+     */
     public int getPoints() {
         return 0;
     }
 
+    /**
+     * @return le coefficient affecté pour la génération de cet item
+     */
     public static int getCoef() {
         return coef;
     }
 
+    /**
+     * @return true si un multiplicator à été mangé false sinon
+     */
     public static boolean isActif() {
         return isActif;
     }
 
+    /**
+     * @param isActif défini si l'item est mangé ou non
+     */
     public static void setIsActif(boolean isActif) {
         Multiplicator.isActif = isActif;
     }
 
+    /**
+     * permet de défini la valeur du coef
+     * @param coef valeur définie pour le coef
+     */
     public static void setCoef(int coef) {
         Multiplicator.coef = coef;
     }
 
-
+    /**
+     * lance le timer au moment où l'item est mangé
+     */
     public void runTimer() {
         isActif = true;
         this.timerReset.schedule(this.resetTimerTask, DELAY_RESET);

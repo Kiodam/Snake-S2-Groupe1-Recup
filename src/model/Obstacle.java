@@ -15,18 +15,27 @@ public class Obstacle {
 
 	private Point pos;
 	public static ArrayList<Obstacle> obstacles = new ArrayList<>();
-	private String[] paths = {"src/ressource/image/wall.png", "src/ressource/image/hole.png"};
+	private String[] paths = {"src/ressource/image/Food/wall.png", "src/ressource/image/Food/hole.png"};
 	private Image image;
 	private int x;
 	private int y;
-	private int nbAppleToEat = 3;
+	private int nbObstacleItemToEat = 3;
 	private static boolean blocked = false;
 
+	/**
+	 * @param x largeur de la fenêtre
+	 * @param y hauteur de la fenêtre
+	 */
 	public Obstacle(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 
+	/**
+	 * @param snake position du snake pour ne pas apparaître sur le corps
+	 * @param item positon de l'item pour ne pas apparaître sur le corps
+	 * @param amount nombre d'obstacle à créer
+	 */
 	public void newObstacles(Snake snake, Item item, int amount) {
 		Random rnd = new Random();
 		Point p;
@@ -47,10 +56,16 @@ public class Obstacle {
 		}
 	}
 
+	/**
+	 * @return la position d'un obstacle
+	 */
 	public Point getPos() {
 		return new Point(pos);
 	}
 
+	/**
+	 * @return l'image de l'item
+	 */
 	public Image getImage() {
 		return image;
 	}
@@ -59,10 +74,16 @@ public class Obstacle {
 		image = new Image(path);
 	}
 
+	/**
+	 * @return la liste des obstacles
+	 */
 	public ArrayList<Obstacle> getObstacles() {
 		return obstacles;
 	}
 
+	/**
+	 * @return la position de chaque obstacle
+	 */
 	public ArrayList<Point> getPointsObstacles() {
 		ArrayList<Point> obstacles = new ArrayList<>();
 		for (Obstacle obs : this.getObstacles()) {
@@ -71,28 +92,37 @@ public class Obstacle {
 		return obstacles;
 	}
 
+	/**
+	 * enève tous les obstacles
+	 */
 	public void reset() {
 		obstacles.clear();
 	}
 
+	/**
+	 * définir la position du point
+	 * @param pos position à affecter
+	 */
 	public void setPos(Point pos) {
 		this.pos = pos;
 	}
 
-	public int getNbAppleToEat() {
-		return nbAppleToEat;
+	/**
+	 * @return le nombre d'item mangé
+	 */
+	public int getNbObstableItemToEat() {
+		return nbObstacleItemToEat;
 	}
 
-	public void setNbAppleToEat(int nbAppleToEat) {
-		this.nbAppleToEat = nbAppleToEat;
-	}
-
+	/**
+	 * incrémentation
+	 */
 	public void incrAppleToEat() {
-		this.nbAppleToEat += 1;
+		this.nbObstacleItemToEat += 1;
 	}
 
-	public void resetNbAppleToEat() {
-		this.nbAppleToEat = 3;
+	public void resetNbObstacleItemToEat() {
+		this.nbObstacleItemToEat = 3;
 	}
 
 	public static boolean getIsBlocked() {

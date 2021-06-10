@@ -5,14 +5,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * géstion du le HighScore
+ * gestion du le HighScore
  */
 public class HighScore {
     private String path = "HighScore.txt";
 
     private boolean newHighScore = false;
+    // deux colonnes pour pseudo et score
     private String[][] scores = new String[10][2];
 
+    /**
+     * créer le tableau de score par défaut
+     */
     public HighScore() {
             for (int i = 0; i < 10; i++) {
                 scores[i][1] = "0";
@@ -51,8 +55,7 @@ public class HighScore {
 
     /**
      * Ajoute un nouveau score
-     *
-     * @param pseudo
+     * @param pseudo le pseudo qui va avec le highScore
      */
     public void addScore(Game game, String pseudo) {
         sortArray();
@@ -81,8 +84,6 @@ public class HighScore {
 
     /**
      * Ecrit le nouveau highscore dans un fichier
-     *
-     * @throws IOException
      */
     private void writeNewHighScore() throws IOException {
         File file = new File(path).getAbsoluteFile();
@@ -97,6 +98,9 @@ public class HighScore {
         writer.close();
     }
 
+    /**
+     * @return le tableau de highScore
+     */
     public String[][] getTotalArray() {
         return scores;
     }

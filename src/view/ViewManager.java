@@ -28,19 +28,16 @@ public class ViewManager {
     //Gamestage
     private Stage gameStage;
 
-    //Icon
-    private Image snakeLogo = new Image("src/ressource/image/SnakeLogoWhite.png");
-
 
     //mainSubScene
     private SnakeSubScene mainSubScene;
     private String css = "src/ressource/style/styling.css";
-    private Image redApple = new Image("src/ressource/image/apple.png");
-    private Image berry = new Image("src/ressource/image/berry.png");
-    private Image ghost = new Image("src/ressource/image/ghost.png");
-    private Image banana = new Image("src/ressource/image/banana.png");
-    private Image brownApple = new Image("src/ressource/image/poison.png");
-    private Image multiplicator = new Image("src/ressource/image/multiplicators.png");
+    private Image redApple = new Image("src/ressource/image/Food/apple.png");
+    private Image berry = new Image("src/ressource/image/Food/berry.png");
+    private Image ghost = new Image("src/ressource/image/Food/ghost.png");
+    private Image banana = new Image("src/ressource/image/Food/banana.png");
+    private Image brownApple = new Image("src/ressource/image/Food/poison.png");
+    private Image multiplicator = new Image("src/ressource/image/Multiplicator/multiplicators.png");
 
     //ScoreSubScene
     private SnakeSubScene scoreSubScene;
@@ -87,7 +84,6 @@ public class ViewManager {
 
         primaryStage.setScene(mainScene);
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(snakeLogo);
         primaryStage.setTitle("PTUTS2 - Groupe 1 - Snake");
         primaryStage.show();
     }
@@ -464,7 +460,6 @@ public class ViewManager {
     public void initGameStage() {
         gameStage = new Stage();
         gameStage.setTitle("PTUTS2 - Groupe 1 - Snake");
-        gameStage.getIcons().add(snakeLogo);
         gameStage.setResizable(false);
     }
 

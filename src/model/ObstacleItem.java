@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 
 
 public class ObstacleItem extends Item {
-    private Image image = new Image("src/ressource/image/poison.png");
+    private Image image = new Image("src/ressource/image/Food/poison.png");
     private static int nbObstacleEaten;
 
     public ObstacleItem(int x, int y, Snake snake, Obstacle obstacle) {
