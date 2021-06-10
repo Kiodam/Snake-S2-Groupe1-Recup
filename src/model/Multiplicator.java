@@ -24,7 +24,7 @@ public class Multiplicator extends Item {
         }
     };
 
-    private String[] paths = {"src/ressource/image/X2.png", "src/ressource/image/X3.png", "src/ressource/image/X5.png"};
+    private String[] paths = {"src/ressource/image/Multiplicator/X2.png", "src/ressource/image/Multiplicator/X3.png", "src/ressource/image/Multiplicator/X5.png"};
     private Image image;
 
     public Multiplicator(int x, int y, Snake snake, Obstacle obstacle) {

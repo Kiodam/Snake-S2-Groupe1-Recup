@@ -3,7 +3,7 @@ package src.model;
 import javafx.scene.image.Image;
 
 public class ScoreItem extends Item {
-	private Image image = new Image("src/ressource/image/berry.png");
+	private Image image = new Image("src/ressource/image/Food/berry.png");
 	public static int nbScoreEaten;
 
 	public ScoreItem(int x, int y, Snake snake, Obstacle obstacle) {
