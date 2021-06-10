@@ -15,7 +15,7 @@ public class Obstacle {
 
 	private Point pos;
 	public static ArrayList<Obstacle> obstacles = new ArrayList<>();
-	private String[] paths = {"src/ressource/image/wall.png", "src/ressource/image/hole.png"};
+	private String[] paths = {"src/ressource/image/Food/wall.png", "src/ressource/image/Food/hole.png"};
 	private Image image;
 	private int x;
 	private int y;

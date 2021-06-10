@@ -36,11 +36,11 @@ public class GameView {
     public Canvas gridCanvas;
     public GraphicsContext graphicsContext;
 
-    private Image redApple = new Image("src/ressource/image/apple.png");
-    private Image berry = new Image("src/ressource/image/berry.png");
-    private Image ghost = new Image("src/ressource/image/ghost.png");
-    private Image banana = new Image("src/ressource/image/banana.png");
-    private Image brownApple = new Image("src/ressource/image/poison.png");
+    private Image redApple = new Image("src/ressource/image/Food/apple.png");
+    private Image berry = new Image("src/ressource/image/Food/berry.png");
+    private Image ghost = new Image("src/ressource/image/Food/ghost.png");
+    private Image banana = new Image("src/ressource/image/Food/banana.png");
+    private Image brownApple = new Image("src/ressource/image/Food/poison.png");
 
     public Label gameOverLabel;
     public Label gameWonLabel;

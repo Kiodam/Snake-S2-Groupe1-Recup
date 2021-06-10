@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 /**L'item qui supprime les murs (cotés)  */
 public class GhostWallItem extends Item {
-    private Image image = new Image("src/ressource/image/ghost.png");
+    private Image image = new Image("src/ressource/image/Food/ghost.png");
     private static int nbGhostEaten;
 
     /**

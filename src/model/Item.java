@@ -11,7 +11,7 @@ import java.util.Random;
 **/
 public class Item {
     private Point pos;
-    private Image image = new Image("src/ressource/image/apple.png");
+    private Image image = new Image("src/ressource/image/Food/apple.png");
     private static int nbItemEaten;
 
     /**
